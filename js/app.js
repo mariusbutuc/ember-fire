@@ -7,6 +7,12 @@ App.Router.map(function() {
   });
 });
 
+App.ApplicationRoute = Ember.Route.extend({
+  setupController: function() {
+    this.controllerFor('food').set('model', App.Food.find());
+  }
+});
+
 App.TablesRoute = Ember.Route.extend({
   model: function() {
     return App.Table.find();
@@ -14,16 +20,18 @@ App.TablesRoute = Ember.Route.extend({
 });
 
 // AUTO-GENERATED
-App.TableRoute = Ember.Route.extend({
-  model: function(params) {
-    return App.Table.find(params.table_id);
-  }
-});
+// App.TableRoute = Ember.Route.extend({
+//   model: function(params) {
+//     return App.Table.find(params.table_id);
+//   }
+// });
 
 App.TablesController = Ember.ArrayController.extend();
 
 // AUTO-GENERATED
-App.TableController = Ember.ObjectController.extend();
+// App.TableController = Ember.ObjectController.extend();
+
+App.FoodController = Ember.ArrayController.extend();
 
 
 // Models
